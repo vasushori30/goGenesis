@@ -1,5 +1,6 @@
 package main
 
+// To run multiple files of same package 'go run main.go state.go'
 func main() {
 	//Slice can have any number of elements
 	//Slice element can only have 1 type
