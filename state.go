@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
-func printState() {
-	fmt.Println("California")
-}
+// Create a new type 'deck'
+// which is slice of strings
+type deck []string
