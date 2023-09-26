@@ -4,7 +4,9 @@ import "fmt"
 
 func main() {
 	cards := []string{"Ace of Diamonds", newCard()}
-	fmt.Println(cards)
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 }
 
 func newCard() string {
