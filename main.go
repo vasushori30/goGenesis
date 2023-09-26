@@ -1,6 +1,12 @@
 package main
 
-// go run main.go state.go
+import "fmt"
+
 func main() {
-	printState()
+	cards := []string{"Ace of Diamonds", newCard()}
+	fmt.Println(cards)
+}
+
+func newCard() string {
+	return "Five of Diamonds"
 }
