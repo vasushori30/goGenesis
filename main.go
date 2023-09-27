@@ -11,7 +11,3 @@ func main() {
 	greeting := "Hi there!"
 	fmt.Println([]byte(greeting))
 }
-
-// func newCard() string {
-// 	return "Five of Diamonds"
-// }
