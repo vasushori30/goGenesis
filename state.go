@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -39,4 +40,9 @@ func deal(d deck, handSize int) (deck, deck) {
 
 func (d deck) toString() string {
 	return strings.Join([]string(d), ",")
+}
+
+func (d deck) saveToFile(filename string) error {
+	// This filename will create a new file and write the deck to it with 0666 permission
+	return os.WriteFile(filename, []byte(d.toString()), 0666)
 }
