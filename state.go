@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -14,7 +15,7 @@ func newDeck() deck {
 	cards := deck{}
 
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Club"}
-	cardValues := []string{"One", "Diamonds", "Hearts", "Club"}
+	cardValues := []string{"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"}
 
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
@@ -58,4 +59,13 @@ func newDeckFromFile(filename string) deck {
 	// This is how we convert byte slice to string
 	s := strings.Split(string(bs), ",")
 	return deck(s)
+}
+
+func (d deck) shuffle() {
+	for i := range d {
+		// Generate a random number
+		newPosition := rand.Intn(len(d) - 1)
+		// Swap the position
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}
 }
